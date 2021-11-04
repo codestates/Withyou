@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import title from "../../images/title.png";
 import loadingImg from "../../images/loading.gif";
 import "../../css/Signup.css";
 import axios from "axios";
@@ -74,7 +73,7 @@ const Signup = ({ setSignupBtnOn, setLoginBtnOn }) => {
       ) : null} */}
       <div className="signup-title">
         {/* <img src={logo} alt="title-logo"></img> */}
-        <img src={title} alt="title"></img>
+        <img src="images/signup/title.png" alt="title"></img>
       </div>
       <div className="signup-input">
         <div>계정 만들기</div>

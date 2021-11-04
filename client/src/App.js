@@ -1,25 +1,31 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import EditPage from "./Pages/EditPage";
-import "./CSS/App.css";
-
+import EditPage from "./pages/EditPage";
+import "./css/App.css";
+import LoginModal from "./pages/modals/Login";
+import Signup from "./pages/modals/Signup";
 
 export default function App() {
-  const [isLogin, setLogin] = useState(false);
+  const [loginBtnOn, setLoginBtnOn] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
   return (
     <Router>
       <div>
         <nav>
-          <img id="sm-logo" src="image/Logo_sm.png" alt="withyouLogo" />
+          <Link to="/">
+            <img id="sm-logo" src="images/Logo_sm.png" alt="withyouLogo" />
+          </Link>
           <div id="nav-menu">
             {!isLogin ? (
               // 로그인이 아닐 경우
               <div id="nav-user">
                 <span id="nav-login">
-                  <Link to="/login">Login</Link>
+                  <Link to="/login" onClick={() => setLoginBtnOn(true)}>
+                    Login
+                  </Link>
                 </span>
                 <span id="nav-join">
-                  <Link to="/join">Join</Link>
+                  <Link to="/join">Sign Up</Link>
                 </span>
               </div>
             ) : (
@@ -38,10 +44,14 @@ export default function App() {
 
         <Switch>
           <Route path="/login">
-            <Login />
+            <LoginModal
+              loginBtnOn={loginBtnOn}
+              setLoginBtnOn={setLoginBtnOn}
+              setIsLogin={setIsLogin}
+            />
           </Route>
           <Route path="/join">
-            <Join />
+            <Signup />
           </Route>
           <Route path="/logout">
             <Logout />
@@ -59,13 +69,7 @@ export default function App() {
 }
 
 // 이 부분들의 코드 분리하기
-function Login() {
-  return <h2>Login</h2>;
-}
 
-function Join() {
-  return <h2>Join</h2>;
-}
 function Logout() {
   return <h2>Logout</h2>;
 }

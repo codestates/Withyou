@@ -1,5 +1,5 @@
 import React from "react";
-import "../../CSS/ElementsModal.css";
+import "../../css/ElementsModal.css";
 
 export default function Elements(props) {
   if (!props.status) {
@@ -20,19 +20,40 @@ export default function Elements(props) {
         <div className="row">
           <img
             id="modal-add-button"
-            src="image/Elements/sample.png"
+            src="images/Elements/sample.png"
+            alt="sampleImage"
             onClick={
               // TODO : 누르면 템플릿 적용되도록 구현
               () => props.onClose()
             }
           />
-          <img id="modal-add-button" src="image/elements/sample.png" />
-          <img id="modal-add-button" src="image/elements/sample.png" />
+          <img
+            id="modal-add-button"
+            src="images/elements/sample.png"
+            alt="sampleImage"
+          />
+          <img
+            id="modal-add-button"
+            src="images/elements/sample.png"
+            alt="sampleImage"
+          />
         </div>
         <div className="row">
-          <img id="modal-add-button" src="image/elements/sample.png" />
-          <img id="modal-add-button" src="image/elements/sample.png" />
-          <img id="modal-add-button" src="image/elements/sample.png" />
+          <img
+            id="modal-add-button"
+            src="images/elements/sample.png"
+            alt="sampleImage"
+          />
+          <img
+            id="modal-add-button"
+            src="images/elements/sample.png"
+            alt="sampleImage"
+          />
+          <img
+            id="modal-add-button"
+            src="images/elements/sample.png"
+            alt="sampleImage"
+          />
         </div>
       </div>
     </div>

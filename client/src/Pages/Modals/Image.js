@@ -1,5 +1,5 @@
 import React from "react";
-import "../../CSS/ImageModal.css";
+import "../../css/ImageModal.css";
 
 export default function Image(props) {
   if (!props.status) {
@@ -19,7 +19,8 @@ export default function Image(props) {
       <div id="modal-upload">
         <img
           id="modal-add-button"
-          src="image/addButton.png"
+          src="images/image/addButton.png"
+          alt="addButtonImage"
           onClick={() => {
             // TODO : 사진 업로드 구현하기
             console.log("업로드 완료");
