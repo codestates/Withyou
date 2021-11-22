@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import Template from "../components/modals/edit/Template";
-import Image from "../components/modals/edit/Image";
-import Elements from "../components/modals/edit/Elements";
-import Text from "../components/modals/edit/Text";
-import templateImg from "../images/template.png";
-import elementsImg from "../images/elements.png";
-import imageImg from "../images/image.png";
-import textImg from "../images/text.png";
-import "../css/EditPage.css";
-import ImageOnCanvas from "../components/modals/edit/ImageOnCanvas";
-import ImageProperty from "../components/modals/edit/ImageProperty";
+import React, { useState } from 'react';
+import Template from '../components/modals/edit/Template';
+import Image from '../components/modals/edit/Image';
+import Elements from '../components/modals/edit/Elements';
+import Text from '../components/modals/edit/Text';
+import templateImg from '../images/template.png';
+import elementsImg from '../images/elements.png';
+import imageImg from '../images/image.png';
+import textImg from '../images/text.png';
+import '../css/EditPage.css';
+import ImageOnCanvas from '../components/modals/edit/ImageOnCanvas';
+import ImageProperty from '../components/modals/edit/ImageProperty';
 
 export default function EditPage() {
   // * 나중에 함수, 상태들 이름 정리한번 싹 하기 --> 직관적으로 알 수 있도록
@@ -37,7 +37,7 @@ export default function EditPage() {
   }
 
   function addToItems(src) {
-    const canvas = document.querySelector("#canvas").getBoundingClientRect();
+    const canvas = document.querySelector('#canvas').getBoundingClientRect();
     console.log(canvas);
     setItemStates((prevState) => {
       return [
@@ -48,11 +48,11 @@ export default function EditPage() {
           // TODO : 작은화면에서 출력한 경우, 큰 화면으로 어떻게 가져올까?
           // 작은 화면과 큰 화면의 비율을 맞춰야 할 것 같음
           style: {
-            position: "absolute",
+            position: 'absolute',
             width: canvas.width / 5,
             top: canvas.y + canvas.height / 3,
             left: canvas.x + canvas.width / 3,
-            transform: "rotate(0deg)",
+            transform: 'rotate(0deg)',
           },
           isSelected: false,
           isDragging: false,
@@ -76,7 +76,7 @@ export default function EditPage() {
 
   function removeObject() {
     window.onkeydown = (e) => {
-      if (e.key === "Backspace" || e.key === "Delete") {
+      if (e.key === 'Backspace' || e.key === 'Delete') {
         const removedItems = itemStates.filter((el) => el.isSelected !== true);
         setItemStates(removedItems);
         setSelectState(false);
@@ -124,17 +124,17 @@ export default function EditPage() {
   removeObject();
 
   return (
-    <div id="EditPage">
-      <div id="sub-nav">
-        <div className="sub-nav-menus">
-          <div className="sub-nav-menu">실행취소</div>
-          <div className="sub-nav-menu">되돌리기</div>
+    <div id='EditPage'>
+      <div id='sub-nav'>
+        <div className='sub-nav-menus'>
+          <div className='sub-nav-menu'>실행취소</div>
+          <div className='sub-nav-menu'>되돌리기</div>
         </div>
-        <div className="sub-nav-menu">저장하기</div>
+        <div className='sub-nav-menu'>저장하기</div>
       </div>
-      <div id="editScreen">
-        <div id="edit-property">
-          <div id="canvas">
+      <div id='editScreen'>
+        <div id='edit-property'>
+          <div id='canvas'>
             {itemStates.map((el, i) => {
               return (
                 <ImageOnCanvas
@@ -170,7 +170,7 @@ export default function EditPage() {
               );
             })}
           </div>
-          <div id="detail-propertys">
+          <div id='detail-propertys'>
             {selectState ? (
               <ImageProperty
                 width={selectedItem.width}
@@ -213,46 +213,46 @@ export default function EditPage() {
             ) : null}
           </div>
         </div>
-        <div id="edit-tools">
-          <div id="buttons">
+        <div id='edit-tools'>
+          <div id='buttons'>
             <div
-              id="template"
+              id='template'
               onClick={() => {
                 setStateAll();
                 setTemplateStatus(true);
               }}
             >
-              {<img className="edit-button" src={templateImg} />}
+              {<img className='edit-button' src={templateImg} alt='#' />}
             </div>
 
             <div
-              id="elements"
+              id='elements'
               onClick={() => {
                 setStateAll();
                 setElementsStatus(true);
               }}
             >
-              {<img className="edit-button" src={elementsImg} />}
+              {<img className='edit-button' src={elementsImg} alt='#' />}
             </div>
 
             <div
-              id="iamge"
+              id='iamge'
               onClick={() => {
                 setStateAll();
                 setImageStatus(true);
               }}
             >
-              {<img className="edit-button" src={imageImg} />}
+              {<img className='edit-button' src={imageImg} alt='#' />}
             </div>
 
             <div
-              id="text"
+              id='text'
               onClick={() => {
                 setStateAll();
                 setTextStatus(true);
               }}
             >
-              {<img className="edit-button" src={textImg} />}
+              {<img className='edit-button' src={textImg} alt='#' />}
             </div>
           </div>
         </div>
