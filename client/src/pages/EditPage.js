@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState } from 'react';
 import Template from '../components/modals/edit/Template';
 import Image from '../components/modals/edit/Image';
@@ -12,16 +11,6 @@ import '../css/EditPage.css';
 import ImageOnCanvas from '../components/modals/edit/ImageOnCanvas';
 import ImageProperty from '../components/modals/edit/ImageProperty';
 
-=======
-import React, { useState } from "react";
-import "../css/EditPage.css";
-import ImageOnCanvas from "../components/editpage/canvas/modals/ImageOnCanvas";
-import EditMenu from "../components/editpage/menu/EditMenu";
-import EditMenuBar from "../components/editpage/menu/EditMenuBar";
-import TopMenu from "../components/TopMenu";
-import ImageProperty from "../components/editpage/canvas/modals/ImageProperty";
-import PropertyBlank from "../components/editpage/canvas/modals/PropertyBlank";
->>>>>>> 1d5d022290a0744fe062e9c086c507aedfce1c31
 export default function EditPage() {
   // * 나중에 함수, 상태들 이름 정리한번 싹 하기 --> 직관적으로 알 수 있도록
   const [itemStates, setItemStates] = useState([]);
@@ -93,7 +82,6 @@ export default function EditPage() {
   const { clientWidth } = document.body;
 
   function addToItems(src) {
-<<<<<<< HEAD
     const canvas = document.querySelector('#canvas').getBoundingClientRect();
     console.log(canvas);
     setItemStates((prevState) => {
@@ -110,30 +98,6 @@ export default function EditPage() {
             top: canvas.y + canvas.height / 3,
             left: canvas.x + canvas.width / 3,
             transform: 'rotate(0deg)',
-=======
-    const canvas = document
-      .querySelector("#canvas-paper")
-      .getBoundingClientRect();
-    // ! 아래 코드 중복 줄이기
-    setItemStates((prevState) => {
-      if (clientWidth >= 900) {
-        return [
-          ...prevState,
-          {
-            id: makeId(),
-            src,
-            style: {
-              position: "absolute",
-              zIndex: itemStates.length,
-              width: canvas.width / 6,
-              height: canvas.height / 6,
-              top: canvas.height / 4 - canvas.height / 10,
-              left: canvas.width / 4 - canvas.width / 12,
-              transform: "rotate(0deg)",
-            },
-            isSelected: false,
-            isDragging: false,
->>>>>>> 1d5d022290a0744fe062e9c086c507aedfce1c31
           },
         ];
       } else {
@@ -158,7 +122,6 @@ export default function EditPage() {
       }
     });
   }
-<<<<<<< HEAD
   function resizeWidth(input) {
     const nextState = [...itemStates];
     const targetIndex = itemStates.findIndex((el) => el.isSelected === true);
@@ -182,8 +145,6 @@ export default function EditPage() {
       }
     };
   }
-=======
->>>>>>> 1d5d022290a0744fe062e9c086c507aedfce1c31
 
   function makeId() {
     return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
@@ -218,7 +179,6 @@ export default function EditPage() {
           <div className='sub-nav-menu'>실행취소</div>
           <div className='sub-nav-menu'>되돌리기</div>
         </div>
-<<<<<<< HEAD
         <div className='sub-nav-menu'>저장하기</div>
       </div>
       <div id='editScreen'>
@@ -258,50 +218,6 @@ export default function EditPage() {
                 />
               );
             })}
-=======
-        <div id="canvas">
-          <div id="canvas-container">
-            <div id="content"></div>
-            <div id="canvas-paper">
-              {itemStates.map((el, i) => {
-                return (
-                  <ImageOnCanvas
-                    key={el.id}
-                    src={el.src}
-                    style={el.style}
-                    isSelected={el.isSelected}
-                    isDragging={el.isDragging}
-                    onDragStart={() => {
-                      const nextState = [...itemStates];
-                      nextState[i].isDragging = true;
-                      setItemStates(nextState);
-                    }}
-                    onDragEnd={() => {
-                      const nextState = [...itemStates];
-                      nextState[i].isDragging = false;
-                      setItemStates(nextState);
-                    }}
-                    onSelect={() => onSelect(i)}
-                    onDeselect={() => onDeselect(i)}
-                    onChangeStyle={(nextStyle) => {
-                      const nextState = [...itemStates];
-                      nextState[i].style = {
-                        ...nextState[i].style,
-                        ...nextStyle,
-                      };
-                      setItemStates(nextState);
-                    }}
-                    selectState={selectState}
-                    initLocation={initLocation}
-                    setMouseInitLocation={setMouseInitLocation}
-                    currentLocation={currentLocation}
-                    setMouseCurrentLocation={setMouseCurrentLocation}
-                    clientWidth={clientWidth}
-                  />
-                );
-              })}
-            </div>
->>>>>>> 1d5d022290a0744fe062e9c086c507aedfce1c31
           </div>
           <div id='detail-propertys'>
             {selectState ? (
