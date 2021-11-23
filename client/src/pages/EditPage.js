@@ -12,28 +12,63 @@ import ImageOnCanvas from '../components/modals/edit/ImageOnCanvas';
 import ImageProperty from '../components/modals/edit/ImageProperty';
 
 export default function EditPage() {
-  // * 나중에 함수, 상태들 이름 정리한번 싹 하기 --> 직관적으로 알 수 있도록
-  const [templateStatus, setTemplateStatus] = useState(false);
-  const [elementsStatus, setElementsStatus] = useState(false);
-  const [imageStatus, setImageStatus] = useState(false);
-  const [textStatus, setTextStatus] = useState(false);
+  // * 나중에 함수, 상태들 이름 정리한번 싹 하기 --> 직관적으로 알 수 있도록  
   const [itemStates, setItemStates] = useState([]);
   const [selectState, setSelectState] = useState(false);
   const [selectedItem, setSelectedItem] = useState({});
+  const [menuBtnStatus, setMenuBtnStatus] = useState("menuBar-template");
+  const canvasRef = useRef();
+  const [contemporaryZIndex, setcontemporaryZIndex] = useState("0");
+  // 가장 위로 올리려면, 현재 인덱스중 가장 높은 놈으로 만들어주면 된다.
 
-  function setStateAll() {
-    const states = [
-      [templateStatus, setTemplateStatus],
-      [elementsStatus, setElementsStatus],
-      [imageStatus, setImageStatus],
-      [textStatus, setTextStatus],
-    ];
+  function onSelect(index) {
+    setSelectState(true);
+    const nextState = [...itemStates];
+    nextState[index].isSelected = true;
+    setcontemporaryZIndex(nextState[index].style.zIndex);
+    nextState[index].style.zIndex = 1000;
+    setItemStates(nextState);
+    getSelectedItemInfo();
+  }
 
-    states.forEach((el) => {
-      if (el[0] === true) {
-        el[1](false);
-      }
-    });
+  function onDeselect(index) {
+    setSelectState(false);
+    const nextState = [...itemStates];
+    nextState[index].isSelected = false;
+    nextState[index].style.zIndex = contemporaryZIndex;
+    setItemStates(nextState);
+  }
+
+  function getSelectedItemInfo() {
+    const itemInfo = itemStates.filter((el) => el.isSelected === true);
+    setSelectedItem(itemInfo.shift().style);
+  }
+
+  function resizeWidth(input) {
+    const nextState = [...itemStates];
+    const targetIndex = itemStates.findIndex((el) => el.isSelected === true);
+    nextState[targetIndex].style.width = input;
+    setItemStates(nextState);
+  }
+
+  function resizeHeight(input) {
+    const nextState = [...itemStates];
+    const targetIndex = itemStates.findIndex((el) => el.isSelected === true);
+    nextState[targetIndex].style.height = input;
+    setItemStates(nextState);
+  }
+
+  function rotateObject(input) {
+    const nextState = [...itemStates];
+    const targetIndex = itemStates.findIndex((el) => el.isSelected === true);
+    nextState[targetIndex].style.transform = input;
+    setItemStates(nextState);
+  }
+
+  function removeObject() {
+    const removedItems = itemStates.filter((el) => el.isSelected !== true);
+    setItemStates(removedItems);
+    setSelectState(false);
   }
 
   function addToItems(src) {
@@ -93,37 +128,21 @@ export default function EditPage() {
     );
   }
 
-  function clickSelected() {
-    setSelectState(true);
-  }
+  window.onkeydown = (e) => {
+    if (e.key === "Escape") {
+      const index = itemStates.findIndex((el) => el.isSelected === true);
+      if (index !== -1) {
+        onDeselect(index);
+      }
+    }
+  };
 
-  function deClickSelected() {
-    setSelectState(false);
+  function modifyZindex(input) {
+    setcontemporaryZIndex(input);
   }
-
-  function onSelect(index) {
-    clickSelected();
-    const nextState = [...itemStates];
-    nextState[index].isSelected = true;
-    setItemStates(nextState);
-    getSelectedItemInfo();
-  }
-
-  function onDeselect(index) {
-    deClickSelected();
-    const nextState = [...itemStates];
-    nextState[index].isSelected = false;
-    setItemStates(nextState);
-  }
-
-  function getSelectedItemInfo() {
-    const itemInfo = itemStates.filter((el) => el.isSelected === true);
-    setSelectedItem(itemInfo.shift().style);
-  }
-
-  removeObject();
 
   return (
+    
     <div id='EditPage'>
       <div id='sub-nav'>
         <div className='sub-nav-menus'>
@@ -173,10 +192,16 @@ export default function EditPage() {
           <div id='detail-propertys'>
             {selectState ? (
               <ImageProperty
+                itemStates={itemStates}
                 width={selectedItem.width}
+                height={selectedItem.height}
                 transform={selectedItem.transform}
+                zindex={contemporaryZIndex}
+                modifyZindex={modifyZindex}
                 resizeWidth={resizeWidth}
+                resizeHeight={resizeHeight}
                 rotateObject={rotateObject}
+                removeObject={removeObject}
               />
             ) : null}
             {templateStatus ? (
@@ -257,6 +282,6 @@ export default function EditPage() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

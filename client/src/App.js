@@ -5,6 +5,7 @@ import LandingPage from "./pages/LandingPage";
 import Mypage from "./pages/Mypage";
 import Nav from "./components/Nav";
 import axios from "axios";
+import "./App.css";
 
 export default function App() {
   const [accessToken, setAccessToken] = useState("");
@@ -52,9 +53,12 @@ export default function App() {
         accessToken={accessToken}
         setAccessToken={setAccessToken}
       />
+      
       <Switch>
         <Route exact={true} path="/">
           <LandingPage />
+        </Route>
+        <Route path="/login">
         </Route>
         <Route path="/editpage">
           <EditPage />
