@@ -99,7 +99,6 @@ export default function EditPage() {
             left: canvas.x + canvas.width / 3,
             transform: 'rotate(0deg)',
           },
-        ];
       } else {
         return [
           ...prevState,
@@ -118,7 +117,6 @@ export default function EditPage() {
             isSelected: false,
             isDragging: false,
           },
-        ];
       }
     });
   }
