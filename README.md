@@ -39,7 +39,13 @@
 - 지금
   - Join in해서 맘껏 디자인하세요!
 
-![기능소개](https://user-images.githubusercontent.com/75522130/145213117-40c6cba8-6f04-4439-ba6e-c80ccdc39459.gif)
-![문구타이핑](https://user-images.githubusercontent.com/75522130/145213125-aa53af8f-b7f7-4ddb-b12c-2f40dd35fa49.gif)
-![엘리먼트삽입](https://user-images.githubusercontent.com/75522130/145213127-595845e9-b738-48c1-b837-d401ec6dc235.gif)
+### 배경&요소 선택
+![배경_요소선택](https://user-images.githubusercontent.com/75522130/145228287-d9a969e2-3017-4b3b-9e2b-e3ba01586e63.gif)
+### 요소 선택 + 위치 조절
+![요소선택+위치조절](https://user-images.githubusercontent.com/75522130/145228343-e6d6c452-2279-4acb-9ff4-9c2dc4e2ffd3.gif)
+### 문구 작성
+![문구작성](https://user-images.githubusercontent.com/75522130/145228371-d620f684-d57f-488f-8107-1fba2dc4eb06.gif)
+### png로 저장 (다운로드 기능)
+![다운로드](https://user-images.githubusercontent.com/75522130/145228396-52564590-a795-4377-b3e5-6d3e35f12dff.gif)
+
 
