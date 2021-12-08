@@ -5,7 +5,6 @@
 ![githublogo](https://user-images.githubusercontent.com/75522130/145033863-e23a56c3-62bd-4917-b298-a30d9b9d6dd0.png)
 ![랜딩화면](https://user-images.githubusercontent.com/75522130/145213266-cd051737-15dd-4571-a4a3-47a2e7c4da42.gif)
 
-![2021-12-08_22-07-54_2](https://user-images.githubusercontent.com/75522130/145213898-3d200cd9-327f-4284-92e5-f5bfd00450d0.gif)
 
 배포링크: https://with-you.co.kr/
 
@@ -49,5 +48,8 @@
 ![다운로드](https://user-images.githubusercontent.com/75522130/145228396-52564590-a795-4377-b3e5-6d3e35f12dff.gif)
 ### 외부 사진, 외부 파일 사용기능
 ![사진추가](https://user-images.githubusercontent.com/75522130/145232864-c0345d3d-131f-4eb4-85a0-b3c4a5d3b72d.gif)
+### 전체 기능
+![Edit_Page풀버전](https://user-images.githubusercontent.com/75522130/145240122-77729ff3-7690-431b-b940-6f361d66255f.gif)
+
 
 
