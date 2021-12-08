@@ -3,6 +3,9 @@
 ## 청첩장, 쉬운 디자인을 도와드립니다.
 
 ![githublogo](https://user-images.githubusercontent.com/75522130/145033863-e23a56c3-62bd-4917-b298-a30d9b9d6dd0.png)
+![랜딩화면](https://user-images.githubusercontent.com/75522130/145213266-cd051737-15dd-4571-a4a3-47a2e7c4da42.gif)
+
+![2021-12-08_22-07-54_2](https://user-images.githubusercontent.com/75522130/145213898-3d200cd9-327f-4284-92e5-f5bfd00450d0.gif)
 
 배포링크: https://with-you.co.kr/
 
@@ -36,5 +39,7 @@
 - 지금
   - Join in해서 맘껏 디자인하세요!
 
-
+![기능소개](https://user-images.githubusercontent.com/75522130/145213117-40c6cba8-6f04-4439-ba6e-c80ccdc39459.gif)
+![문구타이핑](https://user-images.githubusercontent.com/75522130/145213125-aa53af8f-b7f7-4ddb-b12c-2f40dd35fa49.gif)
+![엘리먼트삽입](https://user-images.githubusercontent.com/75522130/145213127-595845e9-b738-48c1-b837-d401ec6dc235.gif)
 
