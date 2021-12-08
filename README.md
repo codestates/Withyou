@@ -4,7 +4,7 @@
 
 ![githublogo](https://user-images.githubusercontent.com/75522130/145033863-e23a56c3-62bd-4917-b298-a30d9b9d6dd0.png)
 
-배포링크: http://with-you.co.kr/
+배포링크: https://with-you.co.kr/
 
 ## 주요기능: Authoring tool을 결합한 WebApp 생성 프로젝트
 - 카드 생성
