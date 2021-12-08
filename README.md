@@ -47,5 +47,7 @@
 ![문구작성](https://user-images.githubusercontent.com/75522130/145228371-d620f684-d57f-488f-8107-1fba2dc4eb06.gif)
 ### png로 저장 (다운로드 기능)
 ![다운로드](https://user-images.githubusercontent.com/75522130/145228396-52564590-a795-4377-b3e5-6d3e35f12dff.gif)
+### 외부 사진, 외부 파일 사용기능
+![사진추가](https://user-images.githubusercontent.com/75522130/145232864-c0345d3d-131f-4eb4-85a0-b3c4a5d3b72d.gif)
 
 
