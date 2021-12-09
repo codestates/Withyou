@@ -3,7 +3,10 @@
 ## 청첩장, 쉬운 디자인을 도와드립니다.
 
 ![githublogo](https://user-images.githubusercontent.com/75522130/145033863-e23a56c3-62bd-4917-b298-a30d9b9d6dd0.png)
+## PC
 ![랜딩화면](https://user-images.githubusercontent.com/75522130/145213266-cd051737-15dd-4571-a4a3-47a2e7c4da42.gif)
+## Phone
+![phone_landing](https://user-images.githubusercontent.com/75522130/145378377-772747c8-5ef9-4d18-8400-175f3962d9c3.gif)
 
 
 배포링크: https://with-you.co.kr/
