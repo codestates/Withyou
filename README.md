@@ -39,7 +39,7 @@
   - 그간 생성한 카드를 챙겨가셔야죠!?
 
 - 지금
-  - Join in해서 맘껏 디자인하세요!
+  - Join in Withyou, 당신의 아이디어를 마음껏 디자인하세요!
 
 ### 배경&요소 선택
 ![배경_요소선택](https://user-images.githubusercontent.com/75522130/145228287-d9a969e2-3017-4b3b-9e2b-e3ba01586e63.gif)
