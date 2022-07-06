@@ -4,14 +4,9 @@ import DownLoad from "./DownLoad";
 import SaveToServer from "./SaveToServer";
 
 export default function TopMenu({
-  isLogin,
-  deSelectObject,
-  setLoading,
   setIsMessage,
-  setIsClientError,
-  setIsSuccessMessage,
-  setIsServerError,
   setIsConfirmMessage,
+  ...rest
 }) {
   return (
     <div id="top-menu">
@@ -28,20 +23,8 @@ export default function TopMenu({
       </div>
       <div className="top-menu-box top-menu-right">
         <div id="top-menu-save">
-          <DownLoad
-            deSelectObject={deSelectObject}
-            setIsClientError={setIsClientError}
-            setIsMessage={setIsMessage}
-          />
-          <SaveToServer
-            isLogin={isLogin}
-            deSelectObject={deSelectObject}
-            setIsMessage={setIsMessage}
-            setIsSuccessMessage={setIsSuccessMessage}
-            setIsClientError={setIsClientError}
-            setIsServerError={setIsServerError}
-            setLoading={setLoading}
-          />
+          <DownLoad setIsMessage={setIsMessage} {...rest} />
+          <SaveToServer setIsMessage={setIsMessage} {...rest} />
         </div>
       </div>
     </div>
